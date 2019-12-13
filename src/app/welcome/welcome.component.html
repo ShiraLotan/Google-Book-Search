@@ -1,0 +1,12 @@
+<div class="welcome">
+<h1>Welcome to Google books API</h1>
+<div>Please enter your username:</div>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <label>
+                  <input matInput type="text" formControlName="userName" placeholder="Username" required>
+                </label>
+                <button  mat-button type="submit"  [disabled]="!profileForm.valid">Submit</button>
+
+              </form>
+
+</div>

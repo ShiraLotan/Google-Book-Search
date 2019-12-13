@@ -1,0 +1,14 @@
+app-search{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+h1{
+    text-align: center;
+}
+
+form{
+    margin: auto;
+    text-align: center;
+}
