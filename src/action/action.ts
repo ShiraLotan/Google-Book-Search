@@ -1,14 +1,21 @@
-import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { UserName } from 'src/model/name.model';
+import { UserName, WishListItem } from 'src/model/name.model';
 
-export const USERNAME = '[USERNAME] add';
-
-
-export class AddName implements Action {
-    readonly type = USERNAME;
-
-    constructor(public payload: UserName) {}
+export enum AddToStateActionType{
+    ADD_NAME = '[ADD_NAME] add name',
+    ADD_TO_WISHLIST = '[ADD_TO_WISHLIST] add to wishlist'
 }
 
-export type Actions = AddName;
+export class AddWelcomeNameAction implements Action {
+    readonly type = AddToStateActionType.ADD_NAME;
+
+    constructor(public payload: UserName){}
+}
+
+export class AddToWishList implements Action {
+    readonly type = AddToStateActionType.ADD_TO_WISHLIST;
+
+    constructor(public payload: WishListItem){}
+}
+
+export type UserAction = AddWelcomeNameAction | AddToWishList ;

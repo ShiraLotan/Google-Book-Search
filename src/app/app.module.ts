@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from '../reducer/reducer';
 import { IsLoadingPipe } from './is-loading.pipe';
+import { BookDialogComponent } from './book-dialog/book-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,11 @@ import { IsLoadingPipe } from './is-loading.pipe';
     WishlistComponent,
     WelcomeComponent,
     NavBarComponent,
-    IsLoadingPipe
+    IsLoadingPipe,
+    BookDialogComponent
+  ],
+  entryComponents: [
+    BookDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,8 @@ import { IsLoadingPipe } from './is-loading.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot({
-      username: reducer
+      name: reducer,
+      wishlist: reducer
     })
   ],
   providers: [],

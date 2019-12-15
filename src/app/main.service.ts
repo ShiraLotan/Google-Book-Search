@@ -16,7 +16,7 @@ export class MainService {
   constructor(private http: HttpClient) { }
 
   searchingValue(word: string): Observable<any> {
-    return this.http.get(this.url + word + 'intitle');
+    return this.http.get(this.url + word );
   }
 
 }

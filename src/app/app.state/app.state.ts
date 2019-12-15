@@ -1,5 +1,6 @@
-import { UserName } from 'src/model/name.model';
+import { UserName, WishListItem } from 'src/model/name.model';
 
 export interface AppState {
-    readonly username: UserName[];
+    readonly name: UserName;
+    readonly wishlist: Array<WishListItem> ;
   }

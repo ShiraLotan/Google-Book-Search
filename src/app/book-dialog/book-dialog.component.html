@@ -1,0 +1,10 @@
+<h1>{{ data.volumeInfo.title }}</h1>
+<h2>{{ data.volumeInfo.subtitle  }}</h2>
+<h3>Author: {{data.volumeInfo.authors[0]}}</h3>
+<p>Publish date: {{ data.volumeInfo.publishedDate }}</p>
+<img src={{data.volumeInfo.imageLinks.thumbnail}}/>
+
+<mat-dialog-actions  align="center">
+    <button mat-button mat-dialog-close [mat-dialog-close]="true" (click)="addToWishlist(data)">Add to wishlist</button>
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

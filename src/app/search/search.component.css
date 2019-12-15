@@ -2,8 +2,16 @@ app-search{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+  
 }
+
+.searchApp{
+    height: 100%;
+    background-image: url('../images/sharon-mccutcheon-eMP4sYPJ9x0-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ 
 h1{
     text-align: center;
 }
@@ -11,4 +19,8 @@ h1{
 form{
     margin: auto;
     text-align: center;
+}
+.helloName{
+    margin: 0;
+    padding: 40px 0 0 30px;
 }

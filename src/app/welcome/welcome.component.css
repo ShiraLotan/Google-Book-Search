@@ -1,6 +1,37 @@
+
 .welcome{
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    background-image: linear-gradient(to bottom, rgba(70, 68, 68, 0.205), rgba(32, 32, 32, 0.73)),url('../images/1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 }
+button{
+    background-color: beige;
+    display: block;
+    margin: auto;
+    margin-top: 23px;
+}
+.enterNameNote{
+    margin-bottom: 15px;
+}
+
+
+::ng-deep .mat-form-field-empty.mat-form-field-label {
+    color: rgb(136, 116, 116);
+}
+
+::ng-deep.mat-form-field-underline {
+    background-color:rgb(136, 116, 116) !important;
+}
+::ng-deep.mat-focused .mat-form-field-label {
+    /*change color of label when focused*/
+    color: green !important;
+   }
+
+  

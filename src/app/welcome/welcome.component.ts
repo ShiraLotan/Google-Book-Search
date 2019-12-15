@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.state/app.state';
-import { UserName } from '../../model/name.model';
 import * as Actions from '../../action/action';
-import { Observable } from 'rxjs/Observable';
 import {Router} from '@angular/router';
+import { UserName } from 'src/model/name.model';
 
 @Component({
   selector: 'app-welcome',
@@ -13,7 +12,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  userName: string;
+  userName = ' ';
 
   profileForm = new FormGroup({
     userName: new FormControl(''),
@@ -24,12 +23,8 @@ export class WelcomeComponent implements OnInit {
   }
 
   onSubmit() {
-   this.userName = this.profileForm.value;
-   this.saveUsername()
+   this.store.dispatch(new Actions.AddWelcomeNameAction({name: this.profileForm.value}));
+   this.router.navigate(['/search']);
   }
 
-  saveUsername(){
-    this.store.dispatch(new Actions.AddName({name: this.userName}));
-    this.router.navigate(['/search']);
-  }
 }

@@ -1,3 +1,6 @@
+.navBar{
+    background-color: seashell;
+}
 ul{
     display: flex;
     flex-direction: row;
@@ -8,4 +11,12 @@ ul{
 }
 ul li{
     margin-left: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    cursor: pointer;
+    color: silver;
 }

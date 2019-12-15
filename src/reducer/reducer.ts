@@ -1,18 +1,19 @@
-import { Action } from '@ngrx/store'; 
-import * as Actions from './../action/action';
-import { UserName } from 'src/model/name.model';
+import {AddToStateActionType, UserAction} from './../action/action';
+import { UserName, WishListItem } from 'src/model/name.model';
 
-const initialState: UserName = {
-    name: ''
-}
+const initialState: any = {
+    name: '',
+    wishlist: []
+};
 
 
-export function reducer(state: UserName[] = [initialState], action: any) {
+export function reducer(state: any = initialState, action: any) {
     switch(action.type) {
-        case Actions.USERNAME:
-            debugger
-            return [...state, action.payload.name];
-        default:
-            return state;
+        case AddToStateActionType.ADD_NAME:
+    return {...state, name: action.payload.name};
+case AddToStateActionType.ADD_TO_WISHLIST:
+    return {...state, wishlist: [...state.wishlist, action.payload.wishlist]};
+    default:
+        return state;
     }
 }
